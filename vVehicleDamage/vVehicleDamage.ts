@@ -19,6 +19,11 @@ export class vVehicleDamage
             
             try
             {
+                if(veh.getPedInSeat(-1) == 0)
+                    veh.setInvincible(true);
+                else
+                    veh.setInvincible(false);
+                
                 if(veh.getEngineHealth() < 0 || veh.getHealth() <= 250)
                 {
                     veh.setEngineHealth(0);
